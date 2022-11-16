@@ -1,12 +1,17 @@
 // DOM elements
 const buttons = document.getElementsByTagName('button');
 const calculations = document.getElementById('calculations');
-const currentNumber = document.getElementById('current-number');
-const calculate = document.getElementById('calculate');
-const numbers = document.querySelectorAll('numbers');
+const currentNumber = document.getElementById('current-number')
+const numbers = document.querySelectorAll('numbers');;
+const equalsBtn = document.getElementById('equals');
 const clearBtn = document.getElementById('clear');
 
-// Set initial values
+
+// TODO
+// Fix decimal button so its disabled after hitting once
+// Set up DEL button
+// Add display for calculation line
+
 let display = "";
 let currentNum = 0.0;
 let total = "empty";
@@ -16,30 +21,17 @@ function updateDisplay() {
     currentNumber.innerHTML = display;
 } 
 
-clearBtn.addEventListener('click', () => {
-    display = "";
-    currentNum = 0.0;
-    total = "empty";
-    globalOperator = "empty";
-    updateDisplay();
-})
-
 function getNum() {
     button.addEventListener('click', e => {
         display += e.target.innerHTML;
-        console.log(display);
         updateDisplay();
+        currentNum = parseFloat(currentNumber.innerHTML);
         })
 }
 
 function getOperator() {
     button.addEventListener('click', e => {
         localOperator = e.target.id;
-        console.log(localOperator);
-        // Saves previously entered number into currentNum
-        currentNum = parseFloat(currentNumber.innerHTML);
-        console.log(currentNum, total);
-
         if (total == "empty") {
             total = currentNum;
             globalOperator = localOperator;
@@ -47,12 +39,10 @@ function getOperator() {
             total = operate(globalOperator, total, currentNum);
             globalOperator = localOperator;
         }
-        console.log(total);
         currentNumber.innerHTML = total;
         display = "";
     })
 }
-
 
 for (button of buttons) {
     // Make entered numbers show up on current number display
@@ -65,13 +55,20 @@ for (button of buttons) {
     }
 }
 
-calculate.addEventListener('click', () => {
+equalsBtn.addEventListener('click', () => {
     currentNumber.innerHTML = operate(globalOperator, total, currentNum);
+})
+
+clearBtn.addEventListener('click', () => {
+    display = "";
+    currentNum = 0.0;
+    total = "empty";
+    globalOperator = "empty";
+    updateDisplay();
 })
 
 
 // if number pressed, show number on screen and calc line
-// if mult numbers pressed, should add on afterwards
 // operand applied, should keep old number on but show 8 * on calc line
 // second number pressed, should show on screen and show whole equation on line
     

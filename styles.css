@@ -42,10 +42,10 @@ button {
     border-radius: 10px;
 }
 
-#multiply, #divide, #add, #subtract, #calculate {
+#multiply, #divide, #add, #subtract, #equals {
     background-color: pink;
 }
 
-#calculate, #clear {
+#equals, #clear {
     width: 154px;
 }
