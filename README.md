@@ -1,5 +1,13 @@
-# calculator
-Simple calculator created with HTML/CSS/JS as part of The Odin Project curriculum.
+# Calculator
+Simple calculator created with HTML/CSS/JS as part of The Odin Project's Foundations curriculum.
 
-Approximate time spent: 
--1 hr basic html and css setup and function for 4 math operators
+Live preview link:
+
+## Approximate time spent
+* Running: 7 hours 
+
+## Skills learned
+
+## Note
+* This is not responsive to mobile or tablet devices and is best viewed on a computer in a full sized window
+* I plan to come back and add additional features once I have learned more
